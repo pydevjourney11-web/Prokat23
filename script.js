@@ -26,14 +26,19 @@ if (tgLink) tgLink.href = tgHref;
 if (waLink) waLink.href = waHref;
 if (bookBtn) bookBtn.href = waHref;
 if (bookBtn2) bookBtn2.href = waHref;
+// Кнопки бронирования в карточках листалки
+document.querySelectorAll('.book-wa').forEach(a=>{ a.href = waHref; a.target = '_blank'; a.rel = 'noopener'; });
 
 // Телефоны
+const phoneTop = document.getElementById('phoneTop');
 const phoneLink = document.getElementById('phoneLink');
 const phoneLink2 = document.getElementById('phoneLink2');
 if (phoneLink) phoneLink.href = `tel:${SETTINGS.whatsapp.phone}`;
 if (phoneLink2) phoneLink2.href = `tel:${SETTINGS.whatsapp.phone}`;
+if (phoneTop) phoneTop.href = `tel:${SETTINGS.whatsapp.phone}`;
 if (phoneLink) phoneLink.textContent = formatPhone(SETTINGS.whatsapp.phone);
 if (phoneLink2) phoneLink2.textContent = formatPhone(SETTINGS.whatsapp.phone);
+if (phoneTop) phoneTop.textContent = formatPhone(SETTINGS.whatsapp.phone);
 
 function formatPhone(p){
   const d = p.replace(/\D/g,'');

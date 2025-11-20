@@ -23,20 +23,20 @@
   <!-- Шапка -->
   <header class="header" id="top">
     <div class="container header__row">
-      <a class="logo" href="#top">Прокат</a>
-      <nav class="nav-desktop" aria-label="Основная навигация">
-        <a href="#home">Главная</a>
-        <a href="#prices">Цены</a>
-        <a href="#deals">Скидки</a>
-        <a href="#service">Сервис</a>
-        <a href="#about">О Нас</a>
-        <a href="#reviews">Отзывы</a>
-        <a href="#contacts">Контакты</a>
-      </nav>
-      <button class="btn ghost header__edit-toggle" id="editToggle" aria-pressed="false" title="Режим редактирования">Редактировать</button>
-      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="overlayNav">
-        <span></span><span></span><span></span>
-      </button>
+      <a class="brand" href="#top">
+        <picture class="brand__img">
+          <source srcset="assets/logo.png" type="image/png">
+          <img src="assets/logo.svg" alt="Логотип Прокат Красная Поляна" />
+        </picture>
+        <span class="brand__name" data-edit id="brandName">ПРОКАТ КРАСНАЯ ПОЛЯНА</span>
+      </a>
+      <a class="phone header__phone" id="phoneTop" href="tel:+79990000000">+7 (999) 000-00-00</a>
+      <div class="header__actions">
+        <button class="btn ghost header__edit-toggle" id="editToggle" aria-pressed="false" title="Режим редактирования">Редактировать</button>
+        <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="overlayNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -48,7 +48,6 @@
       <a href="#deals" class="overlay-link">Скидки</a>
       <a href="#service" class="overlay-link">Сервис</a>
       <a href="#about" class="overlay-link">О Нас</a>
-      <a href="#reviews" class="overlay-link">Отзывы</a>
       <a href="#contacts" class="overlay-link">Контакты</a>
     </nav>
   </div>
@@ -73,11 +72,11 @@
 
   <main>
     <!-- Главная -->
-    <section id="home" class="section hero">
+    <section id="home" class="section hero hero--bg">
       <div class="container hero__grid">
         <div class="hero__text">
           <h1 data-edit id="heroTitle">Прокат лыж и сноубордов</h1>
-          <p class="muted" data-edit id="heroSubtitle">Современное оборудование, честные цены и быстрый сервис. Рядом с вами.</p>
+          <p class="muted" data-edit id="heroSubtitle">Прокат, который знает все о комфортном катании</p>
           <div class="hero__actions">
             <a class="btn primary" id="discountBtn" href="#deals">Получить скидку</a>
             <a class="btn accent" id="bookBtn" href="#" target="_blank" rel="noopener">Забронировать</a>
@@ -106,90 +105,215 @@
         </div>
         <div class="slides">
           <div class="slide active" data-pane="ski">
-            <div class="price-grid">
-              <div class="price-card" data-edit id="price-ski-1">
-                <h3>Комплект лыжи</h3>
-                <p>3 часа — 900 ₽</p>
-                <p>День — 1400 ₽</p>
-                <p>Неделя — 7400 ₽</p>
-              </div>
-              <div class="price-card" data-edit id="price-ski-2">
-                <h3>Ботинки</h3>
-                <p>3 часа — 400 ₽</p>
-                <p>День — 700 ₽</p>
-                <p>Неделя — 3200 ₽</p>
-              </div>
-              <div class="price-card" data-edit id="price-ski-3">
-                <h3>Палки</h3>
-                <p>3 часа — 200 ₽</p>
-                <p>День — 300 ₽</p>
-                <p>Неделя — 900 ₽</p>
+            <div class="carousel" data-carousel="ski">
+              <div class="carousel__track">
+                <article class="product-card border-sky" id="ski-cat-1">
+                  <div class="product-card__media ski" aria-hidden="true">
+                    <svg viewBox="0 0 120 220" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Лыжи">
+                      <rect x="28" y="10" width="10" height="200" rx="6" fill="none" stroke="rgba(159,217,255,0.7)" stroke-width="3" transform="rotate(-6 28 10)" />
+                      <rect x="60" y="10" width="10" height="200" rx="6" fill="none" stroke="rgba(255,142,240,0.7)" stroke-width="3" transform="rotate(6 60 10)" />
+                    </svg>
+                  </div>
+                  <div class="product-card__body">
+                    <h3 class="product-card__title" data-edit id="ski-cat-1-title">Начинай с нами</h3>
+                    <p class="product-card__desc" data-edit id="ski-cat-1-desc">Модели для обучения и комфортного катания.</p>
+                    <ul class="product-card__prices" data-edit id="ski-cat-1-prices">
+                      <li>Без ботинок — 1490₽</li>
+                      <li>Полный комплект — 3490₽</li>
+                    </ul>
+                    <div class="product-card__main-price" data-edit id="ski-cat-1-main">1990₽</div>
+                    <div class="product-card__actions">
+                      <a class="btn primary book-wa" href="#" target="_blank" rel="noopener">ЗАБРОНИРОВАТЬ</a>
+                      <a class="btn outline goto-deals" href="#deals">Получить скидку</a>
+                    </div>
+                  </div>
+                </article>
+                <article class="product-card border-pink" id="ski-cat-2">
+                  <div class="product-card__media ski" aria-hidden="true">
+                    <svg viewBox="0 0 120 220" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Лыжи">
+                      <rect x="28" y="10" width="10" height="200" rx="6" fill="none" stroke="rgba(159,217,255,0.7)" stroke-width="3" transform="rotate(-6 28 10)" />
+                      <rect x="60" y="10" width="10" height="200" rx="6" fill="none" stroke="rgba(255,142,240,0.7)" stroke-width="3" transform="rotate(6 60 10)" />
+                    </svg>
+                  </div>
+                  <div class="product-card__body">
+                    <h3 class="product-card__title" data-edit id="ski-cat-2-title">Встегнись в Комфорт</h3>
+                    <p class="product-card__desc" data-edit id="ski-cat-2-desc">Новые лыжи сезона 23/26</p>
+                    <ul class="product-card__prices" data-edit id="ski-cat-2-prices">
+                      <li>Без ботинок — 1990₽</li>
+                      <li>Полный комплект — 3990₽</li>
+                    </ul>
+                    <div class="product-card__main-price" data-edit id="ski-cat-2-main">2490₽</div>
+                    <div class="product-card__actions">
+                      <a class="btn primary book-wa" href="#" target="_blank" rel="noopener">ЗАБРОНИРОВАТЬ</a>
+                      <a class="btn outline goto-deals" href="#deals">Получить скидку</a>
+                    </div>
+                  </div>
+                </article>
+                <article class="product-card border-lime" id="ski-cat-3">
+                  <div class="product-card__media ski" aria-hidden="true">
+                    <svg viewBox="0 0 120 220" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Лыжи">
+                      <rect x="28" y="10" width="10" height="200" rx="6" fill="none" stroke="rgba(159,217,255,0.7)" stroke-width="3" transform="rotate(-6 28 10)" />
+                      <rect x="60" y="10" width="10" height="200" rx="6" fill="none" stroke="rgba(255,142,240,0.7)" stroke-width="3" transform="rotate(6 60 10)" />
+                    </svg>
+                  </div>
+                  <div class="product-card__body">
+                    <h3 class="product-card__title" data-edit id="ski-cat-3-title">Стань Экспертом</h3>
+                    <p class="product-card__desc" data-edit id="ski-cat-3-desc">Лыжи для продвинутых райдеров</p>
+                    <ul class="product-card__prices" data-edit id="ski-cat-3-prices">
+                      <li>Без ботинок — 2490₽</li>
+                      <li>Полный комплект — 4490₽</li>
+                    </ul>
+                    <div class="product-card__main-price" data-edit id="ski-cat-3-main">2990₽</div>
+                    <div class="product-card__actions">
+                      <a class="btn primary book-wa" href="#" target="_blank" rel="noopener">ЗАБРОНИРОВАТЬ</a>
+                      <a class="btn outline goto-deals" href="#deals">Получить скидку</a>
+                    </div>
+                  </div>
+                </article>
               </div>
             </div>
           </div>
           <div class="slide" data-pane="snow">
-            <div class="price-grid">
-              <div class="price-card" data-edit id="price-snow-1">
-                <h3>Комплект сноуборд</h3>
-                <p>3 часа — 1000 ₽</p>
-                <p>День — 1600 ₽</p>
-                <p>Неделя — 8200 ₽</p>
-              </div>
-              <div class="price-card" data-edit id="price-snow-2">
-                <h3>Шлем</h3>
-                <p>3 часа — 200 ₽</p>
-                <p>День — 300 ₽</p>
-                <p>Неделя — 900 ₽</p>
-              </div>
-              <div class="price-card" data-edit id="price-snow-3">
-                <h3>Защита</h3>
-                <p>3 часа — 300 ₽</p>
-                <p>День — 500 ₽</p>
-                <p>Неделя — 1400 ₽</p>
+            <div class="carousel" data-carousel="snow">
+              <div class="carousel__track">
+                <article class="product-card border-amber" id="snow-cat-1">
+                  <div class="product-card__media snow" aria-hidden="true">
+                    <svg viewBox="0 0 120 220" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Сноуборд">
+                      <rect x="42" y="12" width="18" height="196" rx="24" fill="none" stroke="rgba(34,211,238,0.75)" stroke-width="4" />
+                    </svg>
+                  </div>
+                  <div class="product-card__body">
+                    <h3 class="product-card__title" data-edit id="snow-cat-1-title">Начинай с нами</h3>
+                    <p class="product-card__desc" data-edit id="snow-cat-1-desc">Модели для обучения и комфортного катания.</p>
+                    <ul class="product-card__prices" data-edit id="snow-cat-1-prices">
+                      <li>Без ботинок — 1490₽</li>
+                      <li>Полный комплект — 3490₽</li>
+                    </ul>
+                    <div class="product-card__main-price" data-edit id="snow-cat-1-main">1990₽</div>
+                    <div class="product-card__actions">
+                      <a class="btn primary book-wa" href="#" target="_blank" rel="noopener">ЗАБРОНИРОВАТЬ</a>
+                      <a class="btn outline goto-deals" href="#deals">Получить скидку</a>
+                    </div>
+                  </div>
+                </article>
+                <article class="product-card border-violet" id="snow-cat-2">
+                  <div class="product-card__media snow" aria-hidden="true">
+                    <svg viewBox="0 0 120 220" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Сноуборд">
+                      <rect x="42" y="12" width="18" height="196" rx="24" fill="none" stroke="rgba(167,139,250,0.85)" stroke-width="4" />
+                    </svg>
+                  </div>
+                  <div class="product-card__body">
+                    <h3 class="product-card__title" data-edit id="snow-cat-2-title">Встегнись в Комфорт</h3>
+                    <p class="product-card__desc" data-edit id="snow-cat-2-desc">Новые сноуборды сезона 23/26</p>
+                    <ul class="product-card__prices" data-edit id="snow-cat-2-prices">
+                      <li>Без ботинок — 1990₽</li>
+                      <li>Полный комплект — 3990₽</li>
+                    </ul>
+                    <div class="product-card__main-price" data-edit id="snow-cat-2-main">2490₽</div>
+                    <div class="product-card__actions">
+                      <a class="btn primary book-wa" href="#" target="_blank" rel="noopener">ЗАБРОНИРОВАТЬ</a>
+                      <a class="btn outline goto-deals" href="#deals">Получить скидку</a>
+                    </div>
+                  </div>
+                </article>
+                <article class="product-card border-cyan" id="snow-cat-3">
+                  <div class="product-card__media snow" aria-hidden="true">
+                    <svg viewBox="0 0 120 220" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Сноуборд">
+                      <rect x="42" y="12" width="18" height="196" rx="24" fill="none" stroke="rgba(79,188,255,0.85)" stroke-width="4" />
+                    </svg>
+                  </div>
+                  <div class="product-card__body">
+                    <h3 class="product-card__title" data-edit id="snow-cat-3-title">Стань Экспертом</h3>
+                    <p class="product-card__desc" data-edit id="snow-cat-3-desc">Сноуборды для продвинутых райдеров</p>
+                    <ul class="product-card__prices" data-edit id="snow-cat-3-prices">
+                      <li>Без ботинок — 2490₽</li>
+                      <li>Полный комплект — 4490₽</li>
+                    </ul>
+                    <div class="product-card__main-price" data-edit id="snow-cat-3-main">2990₽</div>
+                    <div class="product-card__actions">
+                      <a class="btn primary book-wa" href="#" target="_blank" rel="noopener">ЗАБРОНИРОВАТЬ</a>
+                      <a class="btn outline goto-deals" href="#deals">Получить скидку</a>
+                    </div>
+                  </div>
+                </article>
               </div>
             </div>
           </div>
           <div class="slide" data-pane="kids">
-            <div class="price-grid">
-              <div class="price-card" data-edit id="price-kids-1">
-                <h3>Комплект детский</h3>
-                <p>3 часа — 600 ₽</p>
-                <p>День — 1000 ₽</p>
-                <p>Неделя — 5200 ₽</p>
-              </div>
-              <div class="price-card" data-edit id="price-kids-2">
-                <h3>Ботинки детские</h3>
-                <p>3 часа — 300 ₽</p>
-                <p>День — 500 ₽</p>
-                <p>Неделя — 2000 ₽</p>
-              </div>
-              <div class="price-card" data-edit id="price-kids-3">
-                <h3>Шлем детский</h3>
-                <p>3 часа — 150 ₽</p>
-                <p>День — 250 ₽</p>
-                <p>Неделя — 700 ₽</p>
+            <div class="carousel" data-carousel="kids">
+              <div class="carousel__track">
+                <article class="product-card border-sky" id="kids-ski">
+                  <div class="product-card__media" aria-hidden="true">
+                    <img src="https://images.unsplash.com/photo-1610557668162-b0ed8b4783ec?q=80&w=800&auto=format&fit=crop" alt="Детские лыжи" />
+                  </div>
+                  <div class="product-card__body">
+                    <h3 class="product-card__title" data-edit id="kids-ski-title">Детский</h3>
+                    <p class="product-card__desc" data-edit id="kids-ski-desc">Лыжи ростовкой до 120см. Ботинки до 22см. Без ботинок — 890₽</p>
+                    <div class="product-card__main-price" data-edit id="kids-ski-main">1190₽</div>
+                    <div class="product-card__actions">
+                      <a class="btn primary book-wa" href="#" target="_blank" rel="noopener">ЗАБРОНИРОВАТЬ</a>
+                      <a class="btn outline goto-deals" href="#deals">Получить скидку</a>
+                    </div>
+                  </div>
+                </article>
+                <article class="product-card border-amber" id="kids-snow">
+                  <div class="product-card__media" aria-hidden="true">
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=800&auto=format&fit=crop" alt="Детский сноуборд" />
+                  </div>
+                  <div class="product-card__body">
+                    <h3 class="product-card__title" data-edit id="kids-snow-title">Детский</h3>
+                    <p class="product-card__desc" data-edit id="kids-snow-desc">Сноуборд ростовкой до 120см. Ботинки до 22см. Без ботинок — 890₽</p>
+                    <div class="product-card__main-price" data-edit id="kids-snow-main">1190₽</div>
+                    <div class="product-card__actions">
+                      <a class="btn primary book-wa" href="#" target="_blank" rel="noopener">ЗАБРОНИРОВАТЬ</a>
+                      <a class="btn outline goto-deals" href="#deals">Получить скидку</a>
+                    </div>
+                  </div>
+                </article>
               </div>
             </div>
           </div>
           <div class="slide" data-pane="extra">
-            <div class="price-grid">
-              <div class="price-card" data-edit id="price-extra-1">
-                <h3>Очки/Маска</h3>
-                <p>3 часа — 200 ₽</p>
-                <p>День — 300 ₽</p>
-                <p>Неделя — 900 ₽</p>
+            <div class="equip-grid">
+              <div class="equip-item">
+                <div class="equip-icon" aria-hidden="true">🪖</div>
+                <div class="equip-name">Шлем</div>
+                <div class="equip-price">490₽</div>
               </div>
-              <div class="price-card" data-edit id="price-extra-2">
-                <h3>Перчатки</h3>
-                <p>3 часа — 150 ₽</p>
-                <p>День — 250 ₽</p>
-                <p>Неделя — 700 ₽</p>
+              <div class="equip-item">
+                <div class="equip-icon" aria-hidden="true">🥽</div>
+                <div class="equip-name">Маска</div>
+                <div class="equip-price">390₽</div>
               </div>
-              <div class="price-card" data-edit id="price-extra-3">
-                <h3>Чехлы</h3>
-                <p>3 часа — 150 ₽</p>
-                <p>День — 250 ₽</p>
-                <p>Неделя — 700 ₽</p>
+              <div class="equip-item">
+                <div class="equip-icon" aria-hidden="true">🧤</div>
+                <div class="equip-name">Перчатки</div>
+                <div class="equip-price">390₽</div>
+              </div>
+              <div class="equip-item">
+                <div class="equip-icon" aria-hidden="true">🧥</div>
+                <div class="equip-name">Куртка</div>
+                <div class="equip-price">790₽</div>
+              </div>
+              <div class="equip-item">
+                <div class="equip-icon" aria-hidden="true">👖</div>
+                <div class="equip-name">Штаны</div>
+                <div class="equip-price">790₽</div>
+              </div>
+              <div class="equip-item">
+                <div class="equip-icon" aria-hidden="true">🧊</div>
+                <div class="equip-name">Комбинезон</div>
+                <div class="equip-price">1990₽</div>
+              </div>
+              <div class="equip-item">
+                <div class="equip-icon" aria-hidden="true">🛡️</div>
+                <div class="equip-name">Защита</div>
+                <div class="equip-price">490₽</div>
+              </div>
+              <div class="equip-item">
+                <div class="equip-icon" aria-hidden="true">🥾</div>
+                <div class="equip-name">Ботинки</div>
+                <div class="equip-price">990₽</div>
               </div>
             </div>
           </div>
@@ -200,34 +324,65 @@
     <!-- Скидки -->
     <section id="deals" class="section">
       <div class="container">
-        <h2>Скидки</h2>
-        <div class="deal-grid">
-          <div class="deal-card" data-edit id="deal-1">
-            <h3>Онлайн-бронирование</h3>
-            <p>-15% на любой комплект при оплате онлайн</p>
-          </div>
-          <div class="deal-card" data-edit id="deal-2">
-            <h3>Будни</h3>
-            <p>Скидка -10% в будние дни</p>
-          </div>
-          <div class="deal-card" data-edit id="deal-3">
-            <h3>Детям</h3>
-            <p>-20% для детей до 12 лет</p>
-          </div>
+        <h2 data-edit id="deals-title">Получай выгоду с нами!</h2>
+        <div class="deal-grid deal-grid--images">
+          <article class="deal-card img-card" id="deal-long">
+            <div class="img" style="--img:url('https://images.unsplash.com/photo-1516366434321-728a48e6b7bf?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="deal-card__body">
+              <h3 data-edit id="deal-long-title">Долгий отдых</h3>
+              <p data-edit id="deal-long-desc">Бронируй от 4х дней — Получай -5%</p>
+            </div>
+          </article>
+          <article class="deal-card img-card" id="deal-group">
+            <div class="img" style="--img:url('https://images.unsplash.com/photo-1610652490678-0bdbb1c5292a?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="deal-card__body">
+              <h3 data-edit id="deal-group-title">Большая компания</h3>
+              <p data-edit id="deal-group-desc">От 4х комплектов — 5%</p>
+            </div>
+          </article>
+          <article class="deal-card img-card" id="deal-skipass">
+            <div class="img" style="--img:url('https://images.unsplash.com/photo-1579446565308-427218a2c60a?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="deal-card__body">
+              <h3 data-edit id="deal-skipass-title">СКИ-ПАСС — 20%</h3>
+              <p data-edit id="deal-skipass-desc">При аренде оборудования в нашем прокате</p>
+            </div>
+          </article>
         </div>
+        <p class="muted small" data-edit id="deals-note">*Скидки акции не суммируются. О дополнительных акциях уточняйте по телефону.</p>
       </div>
     </section>
 
     <!-- Сервис -->
     <section id="service" class="section">
       <div class="container">
-        <h2>Сервис</h2>
-        <ul class="list">
-          <li data-edit id="svc-1">Подбор снаряжения под ваш уровень</li>
-          <li data-edit id="svc-2">Профессиональная подготовка скользящей поверхности</li>
-          <li data-edit id="svc-3">Быстрая выдача и возврат</li>
-          <li data-edit id="svc-4">Дезинфекция и сушка ботинок</li>
-        </ul>
+        <h2 data-edit id="service-title">Услуги для вашего комфортного отдыха</h2>
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="img" style="--img:url('https://images.unsplash.com/photo-1519683221974-336bcc8824f6?q=80&w=1200&auto=format&fit=crop')"></div>
+            <h3 data-edit id="svc-1-title">Скипассы без очередей</h3>
+            <p class="muted" data-edit id="svc-1-desc">на все курорты</p>
+          </article>
+          <article class="service-card">
+            <div class="img" style="--img:url('https://images.unsplash.com/photo-1541537103743-76b0846836d2?q=80&w=1200&auto=format&fit=crop')"></div>
+            <h3 data-edit id="svc-2-title">СкиСервис</h3>
+            <p class="muted" data-edit id="svc-2-desc">Подготовка и ремонт снаряжения</p>
+          </article>
+          <article class="service-card">
+            <div class="img" style="--img:url('https://images.unsplash.com/photo-1483721310020-03333e577078?q=80&w=1200&auto=format&fit=crop')"></div>
+            <h3 data-edit id="svc-3-title">Инструктора</h3>
+            <p class="muted" data-edit id="svc-3-desc">Индивидуальные и групповые занятия</p>
+          </article>
+          <article class="service-card">
+            <div class="img" style="--img:url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=1200&auto=format&fit=crop')"></div>
+            <h3 data-edit id="svc-4-title">Фотосессия</h3>
+            <p class="muted" data-edit id="svc-4-desc">Памятные кадры в горах</p>
+          </article>
+          <article class="service-card">
+            <div class="img" style="--img:url('https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?q=80&w=1200&auto=format&fit=crop')"></div>
+            <h3 data-edit id="svc-5-title">Трансфер</h3>
+            <p class="muted" data-edit id="svc-5-desc">Комфортная доставка к склонам</p>
+          </article>
+        </div>
       </div>
     </section>
 
