@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Прокат лыж и сноубордов</title>
+  <meta name="description" content="Прокат лыж, сноубордов, детского инвентаря и дополнительного оборудования. Быстрое бронирование, скидки и сервис." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- Бегущая строка -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__inner" data-duplicated>
+      <span>Сезон открыт • Скидка -15% при онлайн-бронировании • Новые комплекты 2025 • Бесплатная примерка • </span>
+      <span>Сезон открыт • Скидка -15% при онлайн-бронировании • Новые комплекты 2025 • Бесплатная примерка • </span>
+      <span>Сезон открыт • Скидка -15% при онлайн-бронировании • Новые комплекты 2025 • Бесплатная примерка • </span>
+    </div>
+  </div>
+
+  <!-- Шапка -->
+  <header class="header" id="top">
+    <div class="container header__row">
+      <a class="logo" href="#top">Прокат</a>
+      <nav class="nav-desktop" aria-label="Основная навигация">
+        <a href="#home">Главная</a>
+        <a href="#prices">Цены</a>
+        <a href="#deals">Скидки</a>
+        <a href="#service">Сервис</a>
+        <a href="#about">О Нас</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <button class="btn ghost header__edit-toggle" id="editToggle" aria-pressed="false" title="Режим редактирования">Редактировать</button>
+      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="overlayNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Прозрачная оверлей-навигация -->
+  <div class="overlay-nav" id="overlayNav" aria-hidden="true">
+    <nav class="overlay-nav__panel" aria-label="Навигация по разделам">
+      <a href="#home" class="overlay-link">Главная</a>
+      <a href="#prices" class="overlay-link">Цены</a>
+      <a href="#deals" class="overlay-link">Скидки</a>
+      <a href="#service" class="overlay-link">Сервис</a>
+      <a href="#about" class="overlay-link">О Нас</a>
+      <a href="#reviews" class="overlay-link">Отзывы</a>
+      <a href="#contacts" class="overlay-link">Контакты</a>
+    </nav>
+  </div>
+
+  <!-- Нижняя мобильная панель для одной руки -->
+  <nav class="bottom-nav" aria-label="Быстрая навигация">
+    <a href="#home">Главная</a>
+    <a href="#prices">Цены</a>
+    <a href="#deals">Скидки</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+
+  <!-- Плавающие иконки мессенджеров -->
+  <div class="floating-contacts" aria-label="Контакты">
+    <a class="messenger tg" id="tgLink" href="#" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M9.036 15.39 8.9 19.12c.3 0 .43-.13.59-.28l1.41-1.35 2.92 2.14c.54.3.92.14 1.07-.5l1.93-9.09c.2-.9-.32-1.25-.9-1.03l-11.3 4.36c-.86.33-.84.81-.15 1.03l2.9.9 6.72-4.24c.32-.2.6-.09.36.13l-5.39 4.16Z"/></svg>
+    </a>
+    <a class="messenger wa" id="waLink" href="#" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.94 11.94 0 0 0 12.04 0C5.46 0 .19 5.27.19 11.85c0 2.09.55 4.14 1.59 5.95L0 24l6.36-1.67a11.77 11.77 0 0 0 5.64 1.44h.01c6.58 0 11.85-5.27 11.85-11.84a11.77 11.77 0 0 0-3.34-8.45ZM12 21.33h-.01a9.77 9.77 0 0 1-4.98-1.36l-.36-.21-3.77.99 1-3.67-.24-.38a9.8 9.8 0 1 1 8.36 4.63Zm5.36-7.29c-.29-.15-1.7-.84-1.96-.93-.26-.1-.45-.15-.65.15-.19.29-.75.93-.92 1.12-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.33-1.43-.86-.76-1.44-1.7-1.61-1.98-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.3-.49.1-.2.05-.37-.02-.52-.07-.15-.65-1.56-.89-2.14-.23-.56-.47-.49-.65-.5h-.55c-.2 0-.52.07-.79.37-.26.29-1.01.98-1.01 2.4s1.04 2.79 1.18 2.98c.15.2 2.05 3.13 4.96 4.39.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.11.56-.08 1.7-.7 1.94-1.37.24-.68.24-1.26.17-1.37-.07-.1-.26-.16-.55-.3Z"/></svg>
+    </a>
+  </div>
+
+  <main>
+    <!-- Главная -->
+    <section id="home" class="section hero">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <h1 data-edit id="heroTitle">Прокат лыж и сноубордов</h1>
+          <p class="muted" data-edit id="heroSubtitle">Современное оборудование, честные цены и быстрый сервис. Рядом с вами.</p>
+          <div class="hero__actions">
+            <a class="btn primary" id="discountBtn" href="#deals">Получить скидку</a>
+            <a class="btn accent" id="bookBtn" href="#" target="_blank" rel="noopener">Забронировать</a>
+          </div>
+          <div class="hero__meta">
+            <a class="phone" id="phoneLink" href="tel:+79990000000">+7 (999) 000-00-00</a>
+            <button class="link" id="routeBtn">Как добраться</button>
+          </div>
+        </div>
+        <div class="hero__art" aria-hidden="true">
+          <div class="glow"></div>
+          <div class="card3d"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Цены -->
+    <section id="prices" class="section">
+      <div class="container">
+        <h2>Цены</h2>
+        <div class="tabs" role="tablist">
+          <button class="tab active" role="tab" aria-selected="true" data-tab="ski">Лыжи</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="snow">Сноуборды</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="kids">Дети</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="extra">Доп.оборудование</button>
+        </div>
+        <div class="slides">
+          <div class="slide active" data-pane="ski">
+            <div class="price-grid">
+              <div class="price-card" data-edit id="price-ski-1">
+                <h3>Комплект лыжи</h3>
+                <p>3 часа — 900 ₽</p>
+                <p>День — 1400 ₽</p>
+                <p>Неделя — 7400 ₽</p>
+              </div>
+              <div class="price-card" data-edit id="price-ski-2">
+                <h3>Ботинки</h3>
+                <p>3 часа — 400 ₽</p>
+                <p>День — 700 ₽</p>
+                <p>Неделя — 3200 ₽</p>
+              </div>
+              <div class="price-card" data-edit id="price-ski-3">
+                <h3>Палки</h3>
+                <p>3 часа — 200 ₽</p>
+                <p>День — 300 ₽</p>
+                <p>Неделя — 900 ₽</p>
+              </div>
+            </div>
+          </div>
+          <div class="slide" data-pane="snow">
+            <div class="price-grid">
+              <div class="price-card" data-edit id="price-snow-1">
+                <h3>Комплект сноуборд</h3>
+                <p>3 часа — 1000 ₽</p>
+                <p>День — 1600 ₽</p>
+                <p>Неделя — 8200 ₽</p>
+              </div>
+              <div class="price-card" data-edit id="price-snow-2">
+                <h3>Шлем</h3>
+                <p>3 часа — 200 ₽</p>
+                <p>День — 300 ₽</p>
+                <p>Неделя — 900 ₽</p>
+              </div>
+              <div class="price-card" data-edit id="price-snow-3">
+                <h3>Защита</h3>
+                <p>3 часа — 300 ₽</p>
+                <p>День — 500 ₽</p>
+                <p>Неделя — 1400 ₽</p>
+              </div>
+            </div>
+          </div>
+          <div class="slide" data-pane="kids">
+            <div class="price-grid">
+              <div class="price-card" data-edit id="price-kids-1">
+                <h3>Комплект детский</h3>
+                <p>3 часа — 600 ₽</p>
+                <p>День — 1000 ₽</p>
+                <p>Неделя — 5200 ₽</p>
+              </div>
+              <div class="price-card" data-edit id="price-kids-2">
+                <h3>Ботинки детские</h3>
+                <p>3 часа — 300 ₽</p>
+                <p>День — 500 ₽</p>
+                <p>Неделя — 2000 ₽</p>
+              </div>
+              <div class="price-card" data-edit id="price-kids-3">
+                <h3>Шлем детский</h3>
+                <p>3 часа — 150 ₽</p>
+                <p>День — 250 ₽</p>
+                <p>Неделя — 700 ₽</p>
+              </div>
+            </div>
+          </div>
+          <div class="slide" data-pane="extra">
+            <div class="price-grid">
+              <div class="price-card" data-edit id="price-extra-1">
+                <h3>Очки/Маска</h3>
+                <p>3 часа — 200 ₽</p>
+                <p>День — 300 ₽</p>
+                <p>Неделя — 900 ₽</p>
+              </div>
+              <div class="price-card" data-edit id="price-extra-2">
+                <h3>Перчатки</h3>
+                <p>3 часа — 150 ₽</p>
+                <p>День — 250 ₽</p>
+                <p>Неделя — 700 ₽</p>
+              </div>
+              <div class="price-card" data-edit id="price-extra-3">
+                <h3>Чехлы</h3>
+                <p>3 часа — 150 ₽</p>
+                <p>День — 250 ₽</p>
+                <p>Неделя — 700 ₽</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Скидки -->
+    <section id="deals" class="section">
+      <div class="container">
+        <h2>Скидки</h2>
+        <div class="deal-grid">
+          <div class="deal-card" data-edit id="deal-1">
+            <h3>Онлайн-бронирование</h3>
+            <p>-15% на любой комплект при оплате онлайн</p>
+          </div>
+          <div class="deal-card" data-edit id="deal-2">
+            <h3>Будни</h3>
+            <p>Скидка -10% в будние дни</p>
+          </div>
+          <div class="deal-card" data-edit id="deal-3">
+            <h3>Детям</h3>
+            <p>-20% для детей до 12 лет</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Сервис -->
+    <section id="service" class="section">
+      <div class="container">
+        <h2>Сервис</h2>
+        <ul class="list">
+          <li data-edit id="svc-1">Подбор снаряжения под ваш уровень</li>
+          <li data-edit id="svc-2">Профессиональная подготовка скользящей поверхности</li>
+          <li data-edit id="svc-3">Быстрая выдача и возврат</li>
+          <li data-edit id="svc-4">Дезинфекция и сушка ботинок</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- О Нас -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>О Нас</h2>
+        <p class="muted" data-edit id="about-text">Мы — команда райдеров, которая знает, что нужно для комфортного катания. У нас новое оборудование, гибкая система скидок и удобное расположение.</p>
+      </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section id="reviews" class="section">
+      <div class="container">
+        <h2>Отзывы</h2>
+        <div class="reviews">
+          <div class="review" data-edit id="rev-1">Отличный сервис! Взяли комплект на день, все быстро и по делу. — Анна</div>
+          <div class="review" data-edit id="rev-2">Снаряжение новое, цены адекватные. Рекомендую! — Игорь</div>
+          <div class="review" data-edit id="rev-3">Детское оборудование в идеале, ребёнок доволен. — Мария</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contacts" class="section">
+      <div class="container contacts">
+        <h2>Контакты</h2>
+        <div class="contact-grid">
+          <div>
+            <div class="contact-item">
+              <span class="label">Адрес</span>
+              <p class="value" data-edit id="addressText">г. Ваш город, Ул. Примерная, 1</p>
+            </div>
+            <div class="contact-item">
+              <span class="label">Телефон</span>
+              <a class="value" id="phoneLink2" href="tel:+79990000000">+7 (999) 000-00-00</a>
+            </div>
+            <div class="contact-actions">
+              <button class="btn outline" id="routeBtn2">Построить маршрут</button>
+              <a class="btn accent" id="bookBtn2" href="#" target="_blank" rel="noopener">Забронировать в WhatsApp</a>
+            </div>
+          </div>
+          <div class="map-placeholder" id="mapBox">
+            <div class="pin"></div>
+            <span>Карта появится при построении маршрута</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Панель сохранения (появляется в режиме редактирования) -->
+  <div class="editbar" id="editbar" hidden>
+    <div class="container editbar__row">
+      <span>Режим редактирования включен</span>
+      <div class="editbar__actions">
+        <button class="btn ghost" id="resetEdits">Сбросить</button>
+        <button class="btn primary" id="saveEdits">Сохранить</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
