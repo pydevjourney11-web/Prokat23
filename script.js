@@ -1,16 +1,16 @@
 // Настройки по умолчанию — замените на ваши данные
 const SETTINGS = {
   whatsapp: {
-    phone: "+79990000000", // формат +7XXXXXXXXXX
+    phone: "+79884151437", // формат +7XXXXXXXXXX
     message: encodeURIComponent("Здравствуйте! Хочу забронировать комплект.")
   },
   telegram: {
     username: "your_telegram" // без @
   },
   location: {
-    name: encodeURIComponent("г. Ваш город, Ул. Примерная, 1"),
-    lat: 55.751244, // Москва как пример
-    lng: 37.618423
+    name: encodeURIComponent("Эсто-Садок, ул. Листопадная, 7/2, стр. 1"),
+    lat: null,
+    lng: null
   }
 };
 
@@ -108,18 +108,23 @@ function openRoute(){
 }
 
 function openMaps(hasStart, lat, lng){
-  const dest = `${SETTINGS.location.lat},${SETTINGS.location.lng}`;
+  const hasCoords = typeof SETTINGS.location.lat === 'number' && typeof SETTINGS.location.lng === 'number';
+  const destCoord = hasCoords ? `${SETTINGS.location.lat},${SETTINGS.location.lng}` : null;
+  const destQuery = decodeURIComponent(SETTINGS.location.name);
   const yandex = hasStart
-    ? `https://yandex.ru/maps/?rtext=${lat},${lng}~${dest}&rtt=auto`
-    : `https://yandex.ru/maps/?text=${dest}`;
+    ? hasCoords
+      ? `https://yandex.ru/maps/?rtext=${lat},${lng}~${destCoord}&rtt=auto`
+      : `https://yandex.ru/maps/?rtext=${lat},${lng}~${encodeURIComponent(destQuery)}&rtt=auto`
+    : `https://yandex.ru/maps/?text=${hasCoords ? destCoord : encodeURIComponent(destQuery)}`;
   const google = hasStart
-    ? `https://www.google.com/maps/dir/?api=1&destination=${dest}&origin=${lat},${lng}&travelmode=driving`
-    : `https://www.google.com/maps/search/?api=1&query=${dest}`;
+    ? `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(hasCoords ? destCoord : destQuery)}&origin=${lat},${lng}&travelmode=driving`
+    : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(hasCoords ? destCoord : destQuery)}`;
   // Попробуем открыть Яндекс, затем Google
   window.open(yandex, '_blank');
   setTimeout(()=>window.open(google,'_blank'), 400);
   if (mapBox){
-    mapBox.innerHTML = `<iframe title="map" width="100%" height="100%" style="border:0;border-radius:12px" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=${dest}&output=embed"></iframe>`;
+    const q = hasCoords ? destCoord : encodeURIComponent(destQuery);
+    mapBox.innerHTML = `<iframe title="map" width="100%" height="100%" style="border:0;border-radius:12px" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=${q}&output=embed"></iframe>`;
   }
 }
 
