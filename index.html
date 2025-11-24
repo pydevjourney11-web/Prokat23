@@ -7,18 +7,11 @@
   <meta name="description" content="Прокат лыж, сноубордов, детского инвентаря и дополнительного оборудования. Быстрое бронирование, скидки и сервис." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <!-- Бегущая строка -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee__inner" data-duplicated>
-      <span>Сезон открыт • Скидка -15% при онлайн-бронировании • Новые комплекты 2025 • Бесплатная примерка • </span>
-      <span>Сезон открыт • Скидка -15% при онлайн-бронировании • Новые комплекты 2025 • Бесплатная примерка • </span>
-      <span>Сезон открыт • Скидка -15% при онлайн-бронировании • Новые комплекты 2025 • Бесплатная примерка • </span>
-    </div>
-  </div>
+  
 
   <!-- Шапка -->
   <header class="header" id="top">
@@ -40,6 +33,8 @@
     </div>
   </header>
 
+  
+
   <!-- Прозрачная оверлей-навигация -->
   <div class="overlay-nav" id="overlayNav" aria-hidden="true">
     <nav class="overlay-nav__panel" aria-label="Навигация по разделам">
@@ -57,6 +52,8 @@
     <a href="#home">Главная</a>
     <a href="#prices">Цены</a>
     <a href="#deals">Скидки</a>
+    <a href="#service">Сервис</a>
+    <a href="#about">О Нас</a>
     <a href="#contacts">Контакты</a>
   </nav>
 
@@ -79,7 +76,7 @@
           <p class="muted" data-edit id="heroSubtitle">Прокат, который знает все о комфортном катании</p>
           <div class="hero__actions">
             <a class="btn primary" id="discountBtn" href="#deals">Получить скидку</a>
-            <a class="btn accent" id="bookBtn" href="#" target="_blank" rel="noopener">Забронировать</a>
+            <a class="btn accent book-wa" id="bookBtn" href="#" target="_blank" rel="noopener">Забронировать</a>
           </div>
           <div class="hero__meta">
             <a class="phone" id="phoneLink" href="tel:+79990000000">+7 (999) 000-00-00</a>
@@ -93,26 +90,48 @@
       </div>
     </section>
 
+    <!-- Бегущая строка (перед ценами) -->
+    <div class="marquee marquee--below" aria-hidden="true">
+      <div class="marquee__inner" data-duplicated>
+        <span>Сезон открыт • Скидка -15% при онлайн-бронировании • Новые комплекты 2025 • Бесплатная примерка • </span>
+        <span>Сезон открыт • Скидка -15% при онлайн-бронировании • Новые комплекты 2025 • Бесплатная примерка • </span>
+        <span>Сезон открыт • Скидка -15% при онлайн-бронировании • Новые комплекты 2025 • Бесплатная примерка • </span>
+      </div>
+    </div>
+
     <!-- Цены -->
     <section id="prices" class="section">
       <div class="container">
         <h2>Цены</h2>
         <div class="tabs" role="tablist">
-          <button class="tab active" role="tab" aria-selected="true" data-tab="ski">Лыжи</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="snow">Сноуборды</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="kids">Дети</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="extra">Доп.оборудование</button>
+          <button class="tab active" role="tab" aria-selected="true" data-tab="ski">
+            <span class="tab-ico">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3l-2 18"/><path d="M14 3l2 18"/></svg>
+            </span><span>Лыжи</span>
+          </button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="snow">
+            <span class="tab-ico">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="3" width="8" height="18" rx="4"/></svg>
+            </span><span>Сноуборды</span>
+          </button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="kids">
+            <span class="tab-ico">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="10" r="4"/><path d="M8 16c1.3-1 2.7-1.5 4-1.5s2.7.5 4 1.5"/></svg>
+            </span><span>Дети</span>
+          </button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="extra">
+            <span class="tab-ico">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h16v10H4z"/><path d="M9 9V7h6v2"/></svg>
+            </span><span>Доп.оборудование</span>
+          </button>
         </div>
         <div class="slides">
           <div class="slide active" data-pane="ski">
             <div class="carousel" data-carousel="ski">
               <div class="carousel__track">
-                <article class="product-card border-sky" id="ski-cat-1">
+                <article class="product-card border-green" id="ski-cat-1">
                   <div class="product-card__media ski" aria-hidden="true">
-                    <svg viewBox="0 0 120 220" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Лыжи">
-                      <rect x="28" y="10" width="10" height="200" rx="6" fill="none" stroke="rgba(159,217,255,0.7)" stroke-width="3" transform="rotate(-6 28 10)" />
-                      <rect x="60" y="10" width="10" height="200" rx="6" fill="none" stroke="rgba(255,142,240,0.7)" stroke-width="3" transform="rotate(6 60 10)" />
-                    </svg>
+                    <img src="img/start_luzhi.jpg" alt="Лыжи — Стартуй" />
                   </div>
                   <div class="product-card__body">
                     <h3 class="product-card__title" data-edit id="ski-cat-1-title">Начинай с нами</h3>
@@ -128,12 +147,9 @@
                     </div>
                   </div>
                 </article>
-                <article class="product-card border-pink" id="ski-cat-2">
+                <article class="product-card border-blue" id="ski-cat-2">
                   <div class="product-card__media ski" aria-hidden="true">
-                    <svg viewBox="0 0 120 220" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Лыжи">
-                      <rect x="28" y="10" width="10" height="200" rx="6" fill="none" stroke="rgba(159,217,255,0.7)" stroke-width="3" transform="rotate(-6 28 10)" />
-                      <rect x="60" y="10" width="10" height="200" rx="6" fill="none" stroke="rgba(255,142,240,0.7)" stroke-width="3" transform="rotate(6 60 10)" />
-                    </svg>
+                    <img src="img/komfort_lushi.jpg" alt="Лыжи — Комфорт" />
                   </div>
                   <div class="product-card__body">
                     <h3 class="product-card__title" data-edit id="ski-cat-2-title">Встегнись в Комфорт</h3>
@@ -149,12 +165,9 @@
                     </div>
                   </div>
                 </article>
-                <article class="product-card border-lime" id="ski-cat-3">
+                <article class="product-card border-red" id="ski-cat-3">
                   <div class="product-card__media ski" aria-hidden="true">
-                    <svg viewBox="0 0 120 220" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Лыжи">
-                      <rect x="28" y="10" width="10" height="200" rx="6" fill="none" stroke="rgba(159,217,255,0.7)" stroke-width="3" transform="rotate(-6 28 10)" />
-                      <rect x="60" y="10" width="10" height="200" rx="6" fill="none" stroke="rgba(255,142,240,0.7)" stroke-width="3" transform="rotate(6 60 10)" />
-                    </svg>
+                    <img src="img/exper_lushi.jpg" alt="Лыжи — Эксперт" />
                   </div>
                   <div class="product-card__body">
                     <h3 class="product-card__title" data-edit id="ski-cat-3-title">Стань Экспертом</h3>
@@ -176,11 +189,9 @@
           <div class="slide" data-pane="snow">
             <div class="carousel" data-carousel="snow">
               <div class="carousel__track">
-                <article class="product-card border-amber" id="snow-cat-1">
+                <article class="product-card border-green" id="snow-cat-1">
                   <div class="product-card__media snow" aria-hidden="true">
-                    <svg viewBox="0 0 120 220" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Сноуборд">
-                      <rect x="42" y="12" width="18" height="196" rx="24" fill="none" stroke="rgba(34,211,238,0.75)" stroke-width="4" />
-                    </svg>
+                    <img src="img/snow_nacnhinai.jpg" alt="Сноуборд — Стартуй" />
                   </div>
                   <div class="product-card__body">
                     <h3 class="product-card__title" data-edit id="snow-cat-1-title">Начинай с нами</h3>
@@ -196,11 +207,9 @@
                     </div>
                   </div>
                 </article>
-                <article class="product-card border-violet" id="snow-cat-2">
+                <article class="product-card border-blue" id="snow-cat-2">
                   <div class="product-card__media snow" aria-hidden="true">
-                    <svg viewBox="0 0 120 220" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Сноуборд">
-                      <rect x="42" y="12" width="18" height="196" rx="24" fill="none" stroke="rgba(167,139,250,0.85)" stroke-width="4" />
-                    </svg>
+                    <img src="img/snow_komfort.jpg" alt="Сноуборд — Комфорт" />
                   </div>
                   <div class="product-card__body">
                     <h3 class="product-card__title" data-edit id="snow-cat-2-title">Встегнись в Комфорт</h3>
@@ -216,11 +225,9 @@
                     </div>
                   </div>
                 </article>
-                <article class="product-card border-cyan" id="snow-cat-3">
+                <article class="product-card border-red" id="snow-cat-3">
                   <div class="product-card__media snow" aria-hidden="true">
-                    <svg viewBox="0 0 120 220" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Сноуборд">
-                      <rect x="42" y="12" width="18" height="196" rx="24" fill="none" stroke="rgba(79,188,255,0.85)" stroke-width="4" />
-                    </svg>
+                    <img src="img/snow_expert.jpg" alt="Сноуборд — Эксперт" />
                   </div>
                   <div class="product-card__body">
                     <h3 class="product-card__title" data-edit id="snow-cat-3-title">Стань Экспертом</h3>
@@ -243,8 +250,8 @@
             <div class="carousel" data-carousel="kids">
               <div class="carousel__track">
                 <article class="product-card border-sky" id="kids-ski">
-                  <div class="product-card__media" aria-hidden="true">
-                    <img src="https://images.unsplash.com/photo-1610557668162-b0ed8b4783ec?q=80&w=800&auto=format&fit=crop" alt="Детские лыжи" />
+                  <div class="product-card__media media--contain" aria-hidden="true">
+                    <img src="img/deti_rushie.jpg" alt="Детские лыжи" />
                   </div>
                   <div class="product-card__body">
                     <h3 class="product-card__title" data-edit id="kids-ski-title">Детский</h3>
@@ -258,7 +265,7 @@
                 </article>
                 <article class="product-card border-amber" id="kids-snow">
                   <div class="product-card__media" aria-hidden="true">
-                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=800&auto=format&fit=crop" alt="Детский сноуборд" />
+                    <img src="img/deti_sinie.jpg" alt="Детский сноуборд" width="1400px" />
                   </div>
                   <div class="product-card__body">
                     <h3 class="product-card__title" data-edit id="kids-snow-title">Детский</h3>
@@ -275,43 +282,88 @@
           </div>
           <div class="slide" data-pane="extra">
             <div class="equip-grid">
-              <div class="equip-item">
-                <div class="equip-icon" aria-hidden="true">🪖</div>
+              <div class="equip-item equip-helmet">
+                <div class="equip-icon" aria-hidden="true">
+                  <!-- Helmet -->
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 12a8 8 0 0 1 15.2-2.9c.5 1.1-.2 2.3-1.4 2.3H13"/>
+                    <path d="M13 11v4c0 .6-.4 1-1 1H5.5c-.8 0-1.5-.7-1.5-1.5V13"/>
+                    <path d="M18 14h2.5c.3 0 .5.2.5.5V16c0 .6-.4 1-1 1h-2"/>
+                  </svg>
+                </div>
                 <div class="equip-name">Шлем</div>
                 <div class="equip-price">490₽</div>
               </div>
               <div class="equip-item">
-                <div class="equip-icon" aria-hidden="true">🥽</div>
+                <div class="equip-icon" aria-hidden="true">
+                  <!-- Goggles -->
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 12c0-2 1.6-3.5 3.5-3.5h11C19.4 8.5 21 10 21 12v1.5c0 .8-.7 1.5-1.5 1.5h-.6c-1.2 0-2.4-.5-3.2-1.4l-.7-.8c-.4-.5-1.1-.8-1.8-.8h-1.4c-.7 0-1.4.3-1.8.8l-.7.8c-.8.9-2 1.4-3.2 1.4h-.6C3.7 15 3 14.3 3 13.5V12Z"/>
+                  </svg>
+                </div>
                 <div class="equip-name">Маска</div>
                 <div class="equip-price">390₽</div>
               </div>
               <div class="equip-item">
-                <div class="equip-icon" aria-hidden="true">🧤</div>
+                <div class="equip-icon" aria-hidden="true">
+                  <!-- Glove -->
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8 3v7M11 4v6M14 5v5M17 7v4"/>
+                    <path d="M6 10c0-1.1.9-2 2-2h10v6.5c0 2.2-1.8 4-4 4H9.5c-2.5 0-4.5-2-4.5-4.5V12c0-1.1.9-2 2-2Z"/>
+                  </svg>
+                </div>
                 <div class="equip-name">Перчатки</div>
                 <div class="equip-price">390₽</div>
               </div>
               <div class="equip-item">
-                <div class="equip-icon" aria-hidden="true">🧥</div>
+                <div class="equip-icon" aria-hidden="true">
+                  <!-- Jacket -->
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 3l3 2 3-2 3 4v12c0 1.1-.9 2-2 2h-2V9l-2-1-2 1v12H8c-1.1 0-2-.9-2-2V7l3-4Z"/>
+                  </svg>
+                </div>
                 <div class="equip-name">Куртка</div>
                 <div class="equip-price">790₽</div>
               </div>
               <div class="equip-item">
-                <div class="equip-icon" aria-hidden="true">👖</div>
+                <div class="equip-icon" aria-hidden="true">
+                  <!-- Pants -->
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8 3h8l-1 6h-6L8 3Z"/>
+                    <path d="M9 9v11M15 9v11"/>
+                  </svg>
+                </div>
                 <div class="equip-name">Штаны</div>
                 <div class="equip-price">790₽</div>
               </div>
               <div class="equip-item">
-                <div class="equip-icon" aria-hidden="true">🧊</div>
+                <div class="equip-icon" aria-hidden="true">
+                  <!-- Suit -->
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8 3l4 2 4-2 2 4v12c0 1.1-.9 2-2 2h-2l-2-6-2 6H8c-1.1 0-2-.9-2-2V7l2-4Z"/>
+                  </svg>
+                </div>
                 <div class="equip-name">Комбинезон</div>
                 <div class="equip-price">1990₽</div>
               </div>
               <div class="equip-item">
-                <div class="equip-icon" aria-hidden="true">🛡️</div>
+                <div class="equip-icon" aria-hidden="true">
+                  <!-- Protection -->
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3l7 3v5c0 4.4-3 8.4-7 9.5C8 19.4 5 15.4 5 11V6l7-3Z"/>
+                  </svg>
+                </div>
                 <div class="equip-name">Защита</div>
                 <div class="equip-price">490₽</div>
               </div>
               <div class="equip-item">
-                <div class="equip-icon" aria-hidden="true">🥾</div>
+                <div class="equip-icon" aria-hidden="true">
+                  <!-- Boots -->
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 4v8c0 1.1.9 2 2 2h7.5c.8 0 1.5.7 1.5 1.5V18H5v2h14v-2.5c0-2-1.6-3.5-3.5-3.5H10c-1.7 0-3-1.3-3-3V4h-1Z"/>
+                    <path d="M7 9h7M7 6h7"/>
+                  </svg>
+                </div>
                 <div class="equip-name">Ботинки</div>
                 <div class="equip-price">990₽</div>
               </div>
@@ -327,21 +379,21 @@
         <h2 data-edit id="deals-title">Получай выгоду с нами!</h2>
         <div class="deal-grid deal-grid--images">
           <article class="deal-card img-card" id="deal-long">
-            <div class="img" style="--img:url('https://images.unsplash.com/photo-1516366434321-728a48e6b7bf?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="img" style="--img:url('img/первое.jpg')"></div>
             <div class="deal-card__body">
               <h3 data-edit id="deal-long-title">Долгий отдых</h3>
               <p data-edit id="deal-long-desc">Бронируй от 4х дней — Получай -5%</p>
             </div>
           </article>
           <article class="deal-card img-card" id="deal-group">
-            <div class="img" style="--img:url('https://images.unsplash.com/photo-1610652490678-0bdbb1c5292a?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="img" style="--img:url('img/второе.jpg')"></div>
             <div class="deal-card__body">
               <h3 data-edit id="deal-group-title">Большая компания</h3>
               <p data-edit id="deal-group-desc">От 4х комплектов — 5%</p>
             </div>
           </article>
           <article class="deal-card img-card" id="deal-skipass">
-            <div class="img" style="--img:url('https://images.unsplash.com/photo-1579446565308-427218a2c60a?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="img" style="--img:url('img/третье.jpg')"></div>
             <div class="deal-card__body">
               <h3 data-edit id="deal-skipass-title">СКИ-ПАСС — 20%</h3>
               <p data-edit id="deal-skipass-desc">При аренде оборудования в нашем прокате</p>
@@ -358,27 +410,27 @@
         <h2 data-edit id="service-title">Услуги для вашего комфортного отдыха</h2>
         <div class="service-grid">
           <article class="service-card">
-            <div class="img" style="--img:url('https://images.unsplash.com/photo-1519683221974-336bcc8824f6?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="img" style="--img:url('img/четвертое.jpg')"></div>
             <h3 data-edit id="svc-1-title">Скипассы без очередей</h3>
             <p class="muted" data-edit id="svc-1-desc">на все курорты</p>
           </article>
           <article class="service-card">
-            <div class="img" style="--img:url('https://images.unsplash.com/photo-1541537103743-76b0846836d2?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="img" style="--img:url('img/пятоеjpg.jpg')"></div>
             <h3 data-edit id="svc-2-title">СкиСервис</h3>
             <p class="muted" data-edit id="svc-2-desc">Подготовка и ремонт снаряжения</p>
           </article>
           <article class="service-card">
-            <div class="img" style="--img:url('https://images.unsplash.com/photo-1483721310020-03333e577078?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="img" style="--img:url('img/шестое.jpg')"></div>
             <h3 data-edit id="svc-3-title">Инструктора</h3>
             <p class="muted" data-edit id="svc-3-desc">Индивидуальные и групповые занятия</p>
           </article>
           <article class="service-card">
-            <div class="img" style="--img:url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="img" style="--img:url('img/седьмое.webp')"></div>
             <h3 data-edit id="svc-4-title">Фотосессия</h3>
             <p class="muted" data-edit id="svc-4-desc">Памятные кадры в горах</p>
           </article>
           <article class="service-card">
-            <div class="img" style="--img:url('https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="img" style="--img:url('img/i.webp')"></div>
             <h3 data-edit id="svc-5-title">Трансфер</h3>
             <p class="muted" data-edit id="svc-5-desc">Комфортная доставка к склонам</p>
           </article>
@@ -452,7 +504,7 @@
             </div>
             <div class="contact-actions">
               <button class="btn outline" id="routeBtn2">Построить маршрут</button>
-              <a class="btn accent" id="bookBtn2" href="#" target="_blank" rel="noopener">Забронировать в WhatsApp</a>
+              <a class="btn book-wa" id="bookBtn2" href="#" target="_blank" rel="noopener">Забронировать в WhatsApp</a>
             </div>
           </div>
           <div class="map-placeholder" id="mapBox">
