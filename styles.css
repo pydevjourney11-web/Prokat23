@@ -101,6 +101,9 @@ a{color:inherit;text-decoration:none}
 .product-card__media{border-right:1px solid var(--border);border-top-left-radius:14px;border-bottom-left-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));position:relative;overflow:hidden}
 .product-card__media img{width:100%;height:100%;object-fit:cover;display:block}
 .product-card__media.media--contain img{object-fit:contain;object-position:center}
+.product-card__media.snow img{transform:scale(1.00);transform-origin:center center;object-position:center}
+.product-card__media.zoom-out-slight img{transform:scale(.93);transform-origin:center center}
+.product-card__media.zoom-in-slight img{transform:scale(1.08);transform-origin:center center}
 .product-card__media.ski::after{content:"";position:absolute;inset:0;background:
   radial-gradient(80px 200px at 40% 50%, rgba(79,188,255,0.35), transparent),
   linear-gradient(120deg, rgba(255,79,216,0.2), transparent 60%),
