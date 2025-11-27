@@ -41,8 +41,6 @@
       <a href="#home" class="overlay-link">Главная</a>
       <a href="#prices" class="overlay-link">Цены</a>
       <a href="#deals" class="overlay-link">Скидки</a>
-      <a href="#service" class="overlay-link">Сервис</a>
-      <a href="#about" class="overlay-link">О Нас</a>
       <a href="#contacts" class="overlay-link">Контакты</a>
     </nav>
   </div>
@@ -52,8 +50,6 @@
     <a href="#home">Главная</a>
     <a href="#prices">Цены</a>
     <a href="#deals">Скидки</a>
-    <a href="#service">Сервис</a>
-    <a href="#about">О Нас</a>
     <a href="#contacts">Контакты</a>
   </nav>
 
@@ -411,11 +407,11 @@
         <div class="service-grid">
           <article class="service-card">
             <div class="img" style="--img:url('img/четвертое.jpg')"></div>
-            <h3 data-edit id="svc-1-title">Скипассы без очередей</h3>
+            <h3 data-edit id="svc-1-title">Скипассы -15%</h3>
             <p class="muted" data-edit id="svc-1-desc">на все курорты</p>
           </article>
           <article class="service-card">
-            <div class="img" style="--img:url('img/пятоеjpg.jpg')"></div>
+            <div class="img" style="--img:url('img/пятое.jpg')"></div>
             <h3 data-edit id="svc-2-title">СкиСервис</h3>
             <p class="muted" data-edit id="svc-2-desc">Подготовка и ремонт снаряжения</p>
           </article>
@@ -430,7 +426,7 @@
             <p class="muted" data-edit id="svc-4-desc">Памятные кадры в горах</p>
           </article>
           <article class="service-card">
-            <div class="img" style="--img:url('img/i.webp')"></div>
+            <div class="img" style="--img:url('img/i.jpg')"></div>
             <h3 data-edit id="svc-5-title">Трансфер</h3>
             <p class="muted" data-edit id="svc-5-desc">Комфортная доставка к склонам</p>
           </article>
@@ -441,7 +437,7 @@
     <!-- О Нас -->
     <section id="about" class="section">
       <div class="container">
-        <h2 data-edit id="about-title">Прокат которые знает все о комфорте</h2>
+        <h2 data-edit id="about-title" class="center">Прокат который знает все о комфорте</h2>
         <div class="about-grid">
           <article class="about-card">
             <div class="ico" aria-hidden="true">🎿</div>
@@ -472,18 +468,6 @@
       </div>
     </section>
 
-    <!-- Отзывы -->
-    <section id="reviews" class="section">
-      <div class="container">
-        <h2>Отзывы</h2>
-        <div class="reviews">
-          <div class="review" data-edit id="rev-1">Отличный сервис! Взяли комплект на день, все быстро и по делу. — Анна</div>
-          <div class="review" data-edit id="rev-2">Снаряжение новое, цены адекватные. Рекомендую! — Игорь</div>
-          <div class="review" data-edit id="rev-3">Детское оборудование в идеале, ребёнок доволен. — Мария</div>
-        </div>
-      </div>
-    </section>
-
     <!-- Контакты -->
     <section id="contacts" class="section">
       <div class="container contacts">
@@ -492,24 +476,23 @@
           <div>
             <div class="contact-item">
               <span class="label">Адрес</span>
-              <p class="value" data-edit id="addressText">Эсто-Садок, ул. Листопадная, 7/2, стр. 1</p>
+              <a class="value" data-edit id="addressText">Эсто-Садок, ул. Листопадная, 7/2, стр. 1</a>
             </div>
             <div class="contact-item">
               <span class="label">Телефон</span>
-              <a class="value" id="phoneLink2" href="tel:+79990000000">+7 (999) 000-00-00</a>
+              <p     class="value" id="phoneLink2" href="tel:+79990000000">+7 (999) 000-00-00</p>
             </div>
             <div class="contact-item">
               <span class="label">Режим работы</span>
-              <p class="value" data-edit id="hoursText">с 8:00 до 22:00</p>
+              <a class="value" data-edit id="hoursText">с 8:00 до 22:00</a>
             </div>
             <div class="contact-actions">
               <button class="btn outline" id="routeBtn2">Построить маршрут</button>
               <a class="btn book-wa" id="bookBtn2" href="#" target="_blank" rel="noopener">Забронировать в WhatsApp</a>
             </div>
           </div>
-          <div class="map-placeholder" id="mapBox">
-            <div class="pin"></div>
-            <span>Карта появится при построении маршрута</span>
+          <div class="map-widget" id="mapBox">
+            <iframe id="yMap" title="Карта — как доехать" src="https://yandex.ru/map-widget/v1/?text=%D0%AD%D1%81%D1%82%D0%BE-%D0%A1%D0%B0%D0%B4%D0%BE%D0%BA%2C%20%D1%83%D0%BB.%20%D0%9B%D0%B8%D1%81%D1%82%D0%BE%D0%BF%D0%B0%D0%B4%D0%BD%D0%B0%D1%8F%2C%207%2F2%2C%20%D1%81%D1%82%D1%80.%201&z=16&lang=ru_RU" frameborder="0" allowfullscreen></iframe>
           </div>
         </div>
       </div>
