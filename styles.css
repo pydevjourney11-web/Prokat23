@@ -89,10 +89,17 @@ a{color:inherit;text-decoration:none}
 .hero__text h1{font-size:clamp(28px,6vw,48px);margin:0 0 12px}
 .hero__actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
 .hero__meta{display:flex;gap:16px;align-items:center;margin-top:12px}
-.hero__art{position:relative;height:200px;border-radius:16px;background:linear-gradient(135deg,rgba(79,188,255,0.15),rgba(255,79,216,0.12));overflow:hidden;border:1px solid var(--border)}
+.hero__art{position:relative;height:100%;border-radius:16px;background:linear-gradient(135deg,rgba(79,188,255,0.15),rgba(255,79,216,0.12));overflow:hidden;border:1px solid var(--border)}
 .hero__art .glow{position:absolute;inset:-40%;background:radial-gradient(600px 200px at 30% 50%,rgba(79,188,255,.25),transparent),radial-gradient(600px 200px at 70% 50%,rgba(255,79,216,.25),transparent);animation:float 12s ease-in-out infinite alternate}
-.card3d{position:absolute;inset:16px;border-radius:12px;border:1px solid var(--border);background:linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0));box-shadow:inset 0 0 0 1px rgba(255,255,255,0.03)}
+.card3d{position:absolute;inset:0;border-radius:16px;border:1px solid var(--border);background:linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0));box-shadow:inset 0 0 0 1px rgba(255,255,255,0.03);overflow:hidden}
+.card3d::after{content:"";position:absolute;inset:-20%;background:linear-gradient(120deg,transparent 40%,rgba(255,255,255,0.22) 50%,transparent 60%);transform:translateX(-120%);animation:sheen 3.8s ease-in-out infinite;mix-blend-mode:screen;pointer-events:none}
+.card3d__promo{position:relative;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:4px;padding:12px}
+.card3d__title{font-weight:800;letter-spacing:.5px}
+.card3d__subtitle{font-size:clamp(24px,7vw,36px);font-weight:900;background:linear-gradient(135deg,#fff,#8bd4ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.card3d__note{position:absolute;left:12px;right:12px;bottom:10px;font-size:12px;opacity:.85}
+
 @keyframes float{from{transform:translateY(0)}to{transform:translateY(10px)}}
+@keyframes sheen{from{transform:translateX(-120%) rotate(0.001deg)}to{transform:translateX(120%) rotate(0.001deg)}}
 
 /* Tabs + Slides */
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;justify-content:center}
