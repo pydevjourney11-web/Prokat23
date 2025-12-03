@@ -30,7 +30,8 @@ a{color:inherit;text-decoration:none}
 /* Маркировка */
 .marquee{position:sticky;top:0;z-index:60;background:linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0));backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--border);overflow:hidden;border-radius:50px}
 .marquee--below{position:static;top:auto;margin-top:8px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0));}
-.marquee__inner{display:flex;gap:48px;padding:10px 16px;white-space:nowrap;animation:marquee 14s linear infinite;color:#b8dfff;animation-direction:normal;will-change:transform}
+.marquee__inner{display:flex;gap:0;padding:10px 16px;white-space:nowrap;animation:marquee 14s linear infinite;color:#b8dfff;animation-direction:normal;will-change:transform}
+.marquee__inner span{word-spacing:.8em;letter-spacing:.02em}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-100%)}}
 
 /* Circular marquee (variant B) */
