@@ -46,10 +46,10 @@ a{color:inherit;text-decoration:none}
 }
 
 /* Шапка */
-.header{position:sticky;top:36px;z-index:70}
+.header{position:sticky;top:0;z-index:70}
 .header__row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;justify-content:unset;padding:10px 12px;margin-top:8px;background:rgba(15,19,26,0.7);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow)}
 .brand{display:flex;align-items:center;gap:10px}
-.brand__img{width:32px;height:32px;display:inline-block}
+.brand__img{width:52px;height:52px;display:inline-block}
 .brand__img img{width:100%;height:100%;object-fit:contain;display:block;filter:brightness(1) contrast(1.1)}
 .brand__name{font-weight:800;letter-spacing:0.5px;background:linear-gradient(135deg,#fff,#8bd4ff);-webkit-background-clip:text;background-clip:text;color:transparent}
 .header__actions{display:flex;align-items:center;gap:10px}
@@ -231,7 +231,7 @@ a{color:inherit;text-decoration:none}
   .container{padding:0 12px}
   .section{padding:36px 0}
   .marquee__inner{padding:6px 12px;font-size:12px}
-  .header{top:12px}
+  .header{top:0}
   .header__row{padding:8px 10px}
   .brand__name{font-size:12px}
   .header__phone{font-size:14px}
